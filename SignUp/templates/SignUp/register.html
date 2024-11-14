@@ -1,18 +1,451 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOH Filing System - Register</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="V9-oIxDR7SivJA9rpJpowtycCf_rVmeWj8lQ1v_OT8YTtfJEQZ-DTedTZ12crQXxuOw5toImV9L8-mGFqZ0Zqg==">
+    <title>Sign up — PDOHO Filing System</title>
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="/assets/538e8b2b/images/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/538e8b2b/images/favicon/favicon-192x192.png"
+          sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/538e8b2b/images/favicon/favicon-160x160.png"
+          sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/538e8b2b/images/favicon/favicon-96x96.png"
+          sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/538e8b2b/images/favicon/favicon-16x16.png"
+          sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/538e8b2b/images/favicon/favicon-32x32.png"
+          sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="/assets/538e8b2b/images/favicon/mstile-144x144.png">
+    <meta property="og:image" content="https://my.folderit.com/social/signup.png">
+<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
+<link href="/assets/538e8b2b/css/app.css?v=1731576757" rel="stylesheet">
+<link href="/assets/538e8b2b/css/maps/app.css.map?v=1731576757" rel="stylesheet">
+<link href="/assets/538e8b2b/css/vendor/jquery.selectBox.css?v=1731576757" rel="stylesheet">
+<link href="/assets/538e8b2b/css/vendor/jquery-ui-timepicker-addon.min.css?v=1731576757" rel="stylesheet">
+<link href="/assets/538e8b2b/css/vendor/select2.min.css?v=1731576757" rel="stylesheet">
+<script src="https://www.google.com/recaptcha/api.js?render=6LcdHKMUAAAAAFWCui75RNdd7TlwoBlEpjPGb_8q"></script></head>
+<body class="content">
+<div id="pageWrap">
+    <div id="root" class="off-canvas-wrap" data-offcanvas>
+        <div class="inner-wrap">
+                        <section class="main ">
+                <div id="header">
+                    <div class="row">
+    <div class="small-6 medium-3 columns">
+        <a href="https://www.folderit.com"><img
+                src="/assets/538e8b2b/images/logo-folderit.svg"
+                alt="Folderit" class="logo logo-folderit"/></a>
+    </div>
+    <div class="small-6 medium-9 columns header-info">
+                    <div class="account-select" style="width: 100%;">
+                                    <a href="/signup/">Sign up</a> &nbsp;
+                                <a href="/login/">Login</a>
+            </div>
+            </div>
+</div>
+                </div>
 
-</head>
-<body>
-    <h2>Register</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Register</button>
-    </form>
-</body>
+                <div class="row main">
+                    <div class="small-12 columns content">
+                        <div class="row content-body">
+                            <div class="small-12 columns">
+
+                                <!-- Main content start -->
+
+                                <div class="row">
+    <div class="medium-6 large-4 medium-centered columns" style="padding-top: 50px;padding-bottom: 50px;">
+
+        <h2>Sign up</h2>
+        <p>for the new way to manage your documents</p>
+
+        <form id="form-signup" action="/signup/?_gl=1*1ibgple*_gcl_aw*R0NMLjE3MzE1OTcxNDMuQ2p3S0NBaUEzTmE1QmhBWkVpd0F6cmZhZ0J2V0hXa0t0MHg4bVVFMTg4Ny14VFYwVDJEd2lCdDN5cVRnYWlBeGZiWi1Xc1h0OGZqenFob0NTUklRQXZEX0J3RQ..*_ga*MjE0NzEyOTc2LjE3MzEyMDQ2NTM.*_ga_0F9P35BJ9J*MTczMTU5NzE0Mi4yLjAuMTczMTU5NzE0Mi42MC4wLjA." method="post">
+<input type="hidden" name="_csrf" value="V9-oIxDR7SivJA9rpJpowtycCf_rVmeWj8lQ1v_OT8YTtfJEQZ-DTedTZ12crQXxuOw5toImV9L8-mGFqZ0Zqg==">
+        <input type="hidden" id="browserTimezone" name="User[timezone]">        
+        <input type="text" id="user-company_name" name="User[company_name]" placeholder="Company name">        
+        <input type="text" id="user-phone" name="User[phone]" placeholder="Contact phone">        
+        <input type="email" id="user-email" name="User[email]" placeholder="E-mail">        
+        <select id="user-country_code" name="User[country_code]" placeholder="Country">
+<option value="">Country</option>
+<option value="AF">Afghanistan</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua &amp; Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia &amp; Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="VG">British Virgin Islands</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="BQ">Caribbean Netherlands</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo - Brazzaville</option>
+<option value="CD">Congo - Kinshasa</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curaçao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czechia</option>
+<option value="CI">Côte d’Ivoire</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="SZ">Eswatini</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard &amp; McDonald Islands</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong SAR China</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="XK">Kosovo</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Laos</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao SAR China</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldova</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar (Burma)</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="KP">North Korea</option>
+<option value="MK">North Macedonia</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territories</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn Islands</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RO">Romania</option>
+<option value="RU">Russia</option>
+<option value="RW">Rwanda</option>
+<option value="RE">Réunion</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia &amp; South Sandwich Islands</option>
+<option value="KR">South Korea</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="BL">St. Barthélemy</option>
+<option value="SH">St. Helena</option>
+<option value="KN">St. Kitts &amp; Nevis</option>
+<option value="LC">St. Lucia</option>
+<option value="MF">St. Martin</option>
+<option value="PM">St. Pierre &amp; Miquelon</option>
+<option value="VC">St. Vincent &amp; Grenadines</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard &amp; Jan Mayen</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syria</option>
+<option value="ST">São Tomé &amp; Príncipe</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad &amp; Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks &amp; Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="TR">Türkiye</option>
+<option value="UM">U.S. Outlying Islands</option>
+<option value="VI">U.S. Virgin Islands</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VA">Vatican City</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="WF">Wallis &amp; Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+<option value="AX">Åland Islands</option>
+</select>        
+                    <select id="user-industry_id" name="User[industry_id]" placeholder="Industry">
+<option value="">Industry</option>
+<option value="1">Accounting</option>
+<option value="2">Architecture</option>
+<option value="4">Construction</option>
+<option value="13">Consulting</option>
+<option value="5">Education</option>
+<option value="6">Energy &amp; Utilities</option>
+<option value="3">Engineering</option>
+<option value="7">Finance</option>
+<option value="8">Government</option>
+<option value="9">Healthcare</option>
+<option value="11">IT Services</option>
+<option value="10">Insurance</option>
+<option value="12">Life Sciences</option>
+<option value="14">Manufacturing</option>
+<option value="15">Marketing</option>
+<option value="16">Non-Profit</option>
+<option value="17">Real Estate</option>
+<option value="18">Retail</option>
+<option value="19">Transport &amp; Logistics</option>
+<option value="20">Other</option>
+</select>                    
+        <input type="password" id="user-password" name="User[password]" placeholder="Password">        
+        <input type="password" id="user-password_confirm" name="User[password_confirm]" placeholder="Confirm password">        
+                    <div class="checkbox-field agree">
+                <input type="hidden" name="User[agree_terms]" value="0"><label><input type="checkbox" id="user-agree_terms" name="User[agree_terms]" value="1"> <span><span>I agree with <a href="/files/terms-of-use.pdf" target="_blank">terms and conditions</a></span></span></label>            </div>
+            
+            <div class="checkbox-field agree">
+                <input type="hidden" name="User[agree_privacy]" value="0"><label><input type="checkbox" id="user-agree_privacy" name="User[agree_privacy]" value="1"> <span><span>I have read and accept the <a href="/files/privacy-policy.pdf" target="_blank">privacy and cookie policy</a></span></span></label>            </div>
+                    
+        <hr>
+
+        <div class="form-group field-user-verifycode">
+<input type="hidden" id="user-verifycode" name="User[verifyCode]" value="">
+<div class="help-block"></div>
+</div>
+        <hr>
+
+        <button type="submit" class="button tiny submit">Register</button>
+        </form>    </div>
+</div>
+
+                                <div id="modalContainers">
+    <div id="modalContainer-miniscule" class="reveal-modal custom-modal tiny miniscule" data-reveal></div>
+    <div id="modalContainer" class="reveal-modal custom-modal tiny" data-reveal></div>
+    <div id="modalContainer-small" class="reveal-modal custom-modal small" data-reveal></div>
+    <div id="modalContainer-large" class="reveal-modal custom-modal medium" data-reveal></div>
+</div>
+
+                                <!-- Main content end -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <a class="exit-off-canvas"></a>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="footer-menu">
+    <li><a href="/site/contact/">Contact</a></li>
+            <li><a href="https://www.folderit.com/privacy-policy/"
+               target="_blank">Privacy policy</a></li>
+        <li><a href="/files/terms-of-use.pdf"
+               target="_blank">Terms of use</a></li>
+    </ul>
+<div class="copyright">
+    Folderit &copy; 2024</div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/assets/7db8b21c/yii.js?v=1721332200"></script>
+<script src="/assets/7db8b21c/yii.activeForm.js?v=1721332200"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/538e8b2b/js/modernizr.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/foundation.min.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/magicsuggest-min.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/jquery.selectBox.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/jquery-ui-timepicker-addon.min.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/lity.min.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/select2.min.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/jquery.inputmask.min.js?v=1731576758"></script>
+<script src="/assets/538e8b2b/js/app.min.js?v=1731576758"></script>
+<script>Folderit.insertTimezone("#browserTimezone");</script>
+<script>jQuery(function ($) {
+grecaptcha.ready(function () {
+  grecaptcha.execute('6LcdHKMUAAAAAFWCui75RNdd7TlwoBlEpjPGb_8q', {action: 'homepage'}).then(function (token) {
+    currentRecaptchaTime = Date.now();
+    $('#user-verifycode').val(token);
+  });
+});
+let currentRecaptchaTime = Date.now();
+$('#form-signup').on('beforeSubmit', function () {
+  // if input empty or user spent more than 90 seconds on page
+  if (!$('#user-verifycode').val() || Date.now() - currentRecaptchaTime > 90 * 1000) {
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LcdHKMUAAAAAFWCui75RNdd7TlwoBlEpjPGb_8q', {action: 'homepage'}).then(function (token) {
+        currentRecaptchaTime = Date.now();
+        $('#user-verifycode').val(token);
+        $('#form-signup').submit();
+      });
+    });
+    return false;
+  } else {
+    return true;
+  }
+});
+jQuery('#form-signup').yiiActiveForm([], []);
+});</script></body>
 </html>
