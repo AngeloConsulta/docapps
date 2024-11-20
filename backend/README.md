@@ -39,7 +39,7 @@ Then go to login section
     * Write view def LogoutView(request); to Logout a user
     *Configure URL
     *Test the Feature
-
+ # This is Jjason handled by Angelo
 
 
     
