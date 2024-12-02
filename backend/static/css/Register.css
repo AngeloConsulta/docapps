@@ -1,0 +1,118 @@
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+font-family: 'Arial', sans-serif;
+background-color: #f4f4f9;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+color: #333;
+}
+
+/* Container for the form */
+.container {
+margin: 20px;
+background-color: rgb(68, 63, 63);
+color: white;
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 7px 21px rgba(0, 0, 0, 0.2);
+width: 100%;
+max-width: 400px;
+}
+
+/* Heading style */
+h1 {
+text-align: center;
+color: #007BFF;
+font-size: 2em;
+margin-bottom: 20px;
+}
+
+/* Subheading or description */
+p {
+text-align: center;
+font-size: 16px;
+margin-bottom: 20px;
+}
+
+/* Input field styling */
+.input-cnt {
+margin-bottom: 15px;
+}
+
+.input-cnt label {
+font-weight: bold;
+display: block;
+margin-bottom: 5px;
+margin-top: 20px;
+}
+
+.input-cnt input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+outline: none;
+}
+
+.input-cnt input:focus {
+border-color: #007BFF;
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+.input-cnt > p{
+margin-top: 20px;
+padding: 0;
+}
+.input-cnt >p> a {
+color: #007BFF;
+}
+/* Button styling */
+.registerbtn {
+width: 100%;
+margin-top: 20px;
+padding: 10px;
+background-color: #007BFF;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 18px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.registerbtn:hover {
+background-color: #0056b3;
+}
+.container-signin >p > a {
+color: #007BFF;
+
+
+}
+
+/* Form styling */
+form {
+display: flex;
+flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+h1 {
+font-size: 1.5em;
+}
+.container {
+padding: 20px;
+}
+.registerbtn {
+font-size: 16px;
+}
+}

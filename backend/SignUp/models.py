@@ -1,33 +1,43 @@
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-from django.db.models.signals import post_save
+# from enum import unique
+# from django.db import models
+# from django.contrib.auth.models import AbstractUser
 
-class User(AbstractUser):
-   
-    username = models.CharField(max_length=150)
-    email = models.EmailField(unique=True)
+
+# class User(AbstractUser):
+#     email = models.EmailField(unique=True)
+#     username = models.CharField(max_length=100)
+#     bio = models.CharField(max_length=100)
+
+#     USERNAME_FIELD = "email"
+#     REQUIRED_FIELDS = ['username']
+
+#     def __str__(self):
+#         return self.username
+
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group, Permission
+from django.db import models
+
+class User(AbstractBaseUser, PermissionsMixin):
+    user_id = models.AutoField(primary_key=True)
+    email = models.EmailField(max_length=50, unique=True)
+    username = models.CharField(max_length=50)
+    is_active = models.BooleanField(default=True)  # Optional, depending on requirements
+    is_staff = models.BooleanField(default=False)  # Required if using admin
+    groups = models.ManyToManyField(
+        Group,
+        related_name="appuser_set",
+        blank=True
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        related_name="appuser_set",
+        blank=True
+    )
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [ 'username' ]  
+    REQUIRED_FIELDS = ['username']
 
-    def profile(self):
-        profile = Profile.object.get(user=self)
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    full_name = models.CharField(max_length=1000)
-    bio = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="user_images", default="" )
-    verified = models.BooleanField(default=False)
+    def __str__(self):
+        return self.username
 
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-
-post_save.connect(create_user_profile, sender=User)
-post_save.connect(save_user_profile, sender=User)
-
-   

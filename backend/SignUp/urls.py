@@ -1,13 +1,28 @@
+# from django.urls import path
+# from . import views
+
+
+# #urlpatterns = [ 
+# #path("user", views.UserView.as_view(), name =''),
+#   #  path("register", views.UserRegister.as_view(), name ='register'),
+#   #  path("login", views.UserLogin.as_view(), name ='login'),
+# #path("logout", views.UserLogout.as_view(), name ='logout'),
+    
+
+# ]
+
+from django.contrib import admin
 from django.urls import path
 from . import views
-from rest_framework_simplejwt.views import (TokenRefreshView,)
+
+app_name = "SignUp"
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login, name='login'),
 
 
-
-urlpatterns = [ 
-    path("token/", views.MyTokenObtainPairView.as_view(), name="tokem_obtain_pair"),
-    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("register/",  views.RegisterView.as_view(), name="auth_register"),
-    path("test/", views.testEndPoint, name="test"),
-    path('', views.getRoutes),
 ]
+
+
