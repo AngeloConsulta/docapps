@@ -39,6 +39,8 @@ CORS_ALLOWED_ORIGINS = [
 
 INSTALLED_APPS = [
     'jazzmin',
+    'crispy_forms',
+    "crispy_bootstrap4",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,10 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Custom Apps
-    'SignUp',
+    'SignUp.apps.SignupConfig',
     'rest_framework',
     'corsheaders',
     'documents',
+    
     
 ]
 
@@ -151,11 +154,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'SignUp/static')]
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = "index"
+
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+
+EMAIL_HOST_USER="your email"
+EMAIL_HOST_PASSWORD="your password"
 
 
 # Default primary key field type
@@ -171,6 +183,8 @@ JAZZMIN_SETTINGS = {
     
 
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 

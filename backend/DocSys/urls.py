@@ -16,37 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
+from SignUp import views
+from django.contrib.auth import views as auth
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #User related path
     path('', include('SignUp.urls')),
+    path('login/', views.login, name='login'),
+    path('logout/', auth.LogoutView.as_view(template_name='SignUp/index.html'), name='logout'),
+    path('register/', views.register, name='register'),
     
+
 ]
-
-
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-
-
-
-
-#from django.conf import settings
-#from django.conf.urls.static import static
-#from . import views
-
-#urlpatterns = [
-   
-   
-#     path('admin/', admin.site.urls),
- #    path(' ', include('DocSys.urls')),
- #    path('user/', include('SignUp.urls')),  # for login/logout functionality
-   #  path('', views.home, name='home'),
-#] 
-
-#if settings.DEBUG :
-  #  urlpatterns = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-   # urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIAS_ROOT)
-

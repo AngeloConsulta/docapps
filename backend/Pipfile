@@ -7,6 +7,8 @@ name = "pypi"
 djangorestframework = "*"
 django-cors-headers = "*"
 django-jazzmin = "*"
+django-crispy-forms = "*"
+crispy-bootstrap4 = "*"
 
 [dev-packages]
 
