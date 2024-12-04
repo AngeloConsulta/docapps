@@ -2,19 +2,122 @@
 {% load crispy_forms_tags %}
 {% block start %}
 
-<div class="content-section col-md-8 col-md-offset-2">
-<center>
-<form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
-	{% csrf_token %}
-	<fieldset class="form-group">
-	{{ form|crispy}}
-	</fieldset>
-<center>
-	<button style="background: black; font-size: 2rem; padding:1%;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-log-in"></span>  login</button>
-</center>
-<br/>
-<sub style="text-align: left;"><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">don't have account,sign up</a></sub>
-</form>
-</center>
-</div>
+<!-- <div class="content-section col-md-8 offset-md-2">
+	<center>
+	  <form method="POST" class="p-4 border border-dark rounded" style="margin: 4%;">
+		{% csrf_token %}
+		<fieldset class="form-group">
+		  {{ form|crispy }}
+		</fieldset>
+		<center>
+		  <button class="btn btn-dark btn-lg mt-3" type="submit">
+			<i class="bi bi-box-arrow-in-right"></i> Login
+		  </button>
+		</center>
+		<br />
+		<sub>
+		  <a href="{% url 'register' %}" class="text-decoration-none text-primary">
+			Don't have an account? Sign up
+		  </a>
+		</sub>
+	  </form>
+	</center>
+  </div> -->
+  <style type="text/css">
+	.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #1a1818;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+/* Make the border for the input fields visible and styled */
+.form-outline input {
+    border: 1px solid black !important; /* Create a solid black border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    padding: 10px; /* Optional: Add padding inside the input field */
+}
+/* Make the border turn black when the input is focused */
+.form-outline input:focus {
+    border-color: #007bff !important; /* Change border color to blue when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: Add a blue shadow effect */
+}
+/* Change the label color when the input is focused */
+.form-outline input:focus ~ .form-label {
+    color: #007bff !important; /* Change label color to blue when focused */
+}
+
+
+
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+
+}
+  </style>
+  <section class="vh-100">
+	<div class="container-fluid h-custom">
+	  <div class="row d-flex justify-content-center align-items-center h-100">
+		<div class="col-md-9 col-lg-6 col-xl-5">
+		  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
+		</div>
+		<div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+		  <form method="POST" action="{% url 'login' %}">
+			{% csrf_token %}
+			<div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+			  <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+			  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+				<i class="fab fa-facebook-f"></i>
+			  </button>
+			  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+				<i class="fab fa-twitter"></i>
+			  </button>
+			  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+				<i class="fab fa-linkedin-in"></i>
+			  </button>
+			</div>
+  
+			<div class="divider d-flex align-items-center my-4">
+			  <p class="text-center fw-bold mx-3 mb-0">Or</p>
+			</div>
+
+			<!-- the box borderline cant vannish -->
+  
+			<!-- Email input -->
+			<div data-mdb-input-init class="form-outline mb-4">
+			  <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" name="username" required />
+			  <label class="form-label" for="form3Example3">Email address</label>
+			</div>
+  
+			<!-- Password input -->
+			<div data-mdb-input-init class="form-outline mb-3">
+			  <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" name="password" required />
+			  <label class="form-label" for="form3Example4">Password</label>
+			</div>
+  
+			<div class="d-flex justify-content-between align-items-center">
+			  <!-- Checkbox -->
+			  <div class="form-check mb-0">
+				<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+				<label class="form-check-label" for="form2Example3">Remember me</label>
+			  </div>
+			  <a href="#!" class="text-body">Forgot password?</a>
+			</div>
+  
+			<div class="text-center text-lg-start mt-4 pt-2">
+			  <a href="{% url 'documents/dashboard' %}"><button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button></a>
+			  <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?  <a href="{% url 'register' %}" class="link-danger">Register</a></p>
+			</div>
+		  </form>
+		</div>
+	  </div>
+	</div>
+	
+  </section>
+  
+  
 {% endblock start %}

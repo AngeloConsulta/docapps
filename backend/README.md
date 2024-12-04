@@ -42,4 +42,7 @@ Then go to login section
  # This is Jjason handled by Angelo
 
 
+ the logout button is not functional or cant render to homepage again
+
+
     
